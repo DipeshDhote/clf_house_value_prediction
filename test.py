@@ -3,6 +3,8 @@ from src.clf_prediction_project.exception import CustomException
 import sys
 from src.clf_prediction_project.components.data_ingestion import DataIngestion
 from src.clf_prediction_project.components.data_ingestion import DataIngestionConfig
+from src.clf_prediction_project.components.data_transformation import DataTransformation
+from src.clf_prediction_project.components.data_transformation import DataTransformationConfig
 
 
 if __name__=="__main__":
@@ -10,7 +12,10 @@ if __name__=="__main__":
 
     try:
         data_ingestion=DataIngestion()
-        data_ingestion.initiate_data_ingestion()
+        train_data_path,test_data_path=data_ingestion.initiate_data_ingestion()
+
+        data_transformation=DataTransformation()
+        data_transformation.data_transformation_config(train_data_path,test_data_path)
 
 
     
