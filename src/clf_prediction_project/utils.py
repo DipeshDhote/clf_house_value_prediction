@@ -6,13 +6,6 @@ import pandas as pd
 import pymysql 
 from dotenv import load_dotenv
 
-import pickle
-import numpy
-from sklearn.metrics import r2_score
-from sklearn.model_selection import GridSearchCV
-import pymysql
-import numpy as np
-import dill
 
 load_dotenv()
 
