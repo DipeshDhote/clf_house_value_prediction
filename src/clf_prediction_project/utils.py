@@ -1,7 +1,7 @@
 import os 
 import sys
 from src.clf_prediction_project.logger import logging
-from src.clf_prediction_project.exeption import CustomException
+from src.clf_prediction_project.exception import CustomException
 import pandas as pd
 import pymysql 
 from dotenv import load_dotenv
