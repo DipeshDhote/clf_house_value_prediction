@@ -4,7 +4,7 @@ from dataclasses import dataclass
 import numpy as np
 import pandas as pd
 
-from sklearn.preprocessing import OneHotEncoder ,StandardScaler
+from sklearn.preprocessing import StandardScaler
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
@@ -48,7 +48,7 @@ class DataTransformation:
             # making pipeline for numerical columns
             num_pipeline = Pipeline(
                 steps=[
-                
+                    ("imputer",SimpleImputer(strategy="median")),
                     ("Scaler",StandardScaler())
                 ]
             )
@@ -56,9 +56,9 @@ class DataTransformation:
             logging.info("pipeline for numerical column completed")
 
             preprocessor = ColumnTransformer(
+                
                 [   
-                    ("missing_values",SimpleImputer()),
-                    ("NumericalPipeline",num_pipeline,numerical_columns)
+                  ("NumericalPipeline",num_pipeline,numerical_columns)
                 ]
             )
             logging.info("column transformation completed")
