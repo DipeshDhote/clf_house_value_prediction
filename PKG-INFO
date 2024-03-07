@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: clf-house-value-prediction
+Version: 0.0.1
+Author: Dipesh
+Author-email: dpsh.dhote@gmail.com
+License-File: LICENSE
+Requires-Dist: n
+Requires-Dist: u
+Requires-Dist: m
+Requires-Dist: p
+Requires-Dist: y
